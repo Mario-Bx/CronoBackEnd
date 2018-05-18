@@ -48,9 +48,9 @@ public class EntrenadorDTO {
         this.ciudad = objCL.getCiudad();
         this.Contraseña = objCL.getContraseña();
         this.deporteFK = new DeportesDTO(objCL.getDeporteFK());
-        this.list_Asistencias = new ArrayList<>();
-        this.list_Deportistas = new ArrayList<>();
-        this.list_Rutinas = new ArrayList<>();
+        this.list_Asistencias = new ArrayList();
+        this.list_Deportistas = new ArrayList();
+        this.list_Rutinas = new ArrayList();
     }
 
     public int getID_Entrenador() {

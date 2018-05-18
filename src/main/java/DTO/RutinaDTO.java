@@ -44,7 +44,7 @@ public class RutinaDTO {
         this.fecha = objCL.getFecha();
         this.jornada = objCL.getJornada();
         this.entrenadorFK = new EntrenadorDTO(objCL.getEntrenadorFK());
-        this.list_TimeEnt = new ArrayList<>();
+        this.list_TimeEnt = new ArrayList();
     }
 
     public int getID_Rutina() {

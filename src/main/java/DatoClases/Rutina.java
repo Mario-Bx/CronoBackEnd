@@ -29,7 +29,7 @@ public class Rutina implements Serializable {
     private String jornada;
 
     public Rutina() {
-        this.list_TimeEnt = new ArrayList<>();
+        this.list_TimeEnt = new ArrayList();
     }
 
     public Rutina(int repeticiones, int distancia, String estilo, String fecha, String jornada) {
@@ -38,7 +38,7 @@ public class Rutina implements Serializable {
         this.estilo = estilo;
         this.fecha = fecha;
         this.jornada = jornada;
-        this.list_TimeEnt = new ArrayList<>();
+        this.list_TimeEnt = new ArrayList();
     }
 
     public int getID_Rutina() {

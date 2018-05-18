@@ -40,7 +40,7 @@ public class EventoDTO {
         this.fecha = objCL.getFecha();
         this.lugar = objCL.getLugar();
         this.deporteFK = new DeportesDTO(objCL.getDeport_FK());
-        this.list_Tiempo_Competencias = new ArrayList<>();
+        this.list_Tiempo_Competencias = new ArrayList();
     }
 
     public int getID_Evento() {
