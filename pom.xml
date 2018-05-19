@@ -20,18 +20,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.6</version>
         </dependency>
-        <!-- Glassfish -->
-        <dependency>
-            <groupId>org.glassfish.extras</groupId>
-            <artifactId>glassfish-embedded-web</artifactId>
-            <version>3.1.1</version>
-        </dependency>	
-        <!-- Gson -->
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-server</artifactId>
-            <version>1.8</version>
-        </dependency>
+        
         <!-- JDBC Driver -->
         <dependency>
             <groupId>postgresql</groupId>
@@ -69,12 +58,25 @@
             <version>6.0</version>
         </dependency>
         
+        <!-- Glassfish -->
+        <dependency>
+            <groupId>org.glassfish.extras</groupId>
+            <artifactId>glassfish-embedded-web</artifactId>
+            <version>3.1.1</version>
+        </dependency>	
+        <!-- Gson -->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>1.8</version>
+        </dependency>
+        
     </dependencies>  
     
     
     <!-- Elementos HEroku -->
     <build>
-        <finalName>holaMundo</finalName>
+        <finalName>indexRest</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
