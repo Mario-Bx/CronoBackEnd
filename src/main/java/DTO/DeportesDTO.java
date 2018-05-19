@@ -37,9 +37,9 @@ public class DeportesDTO {
         this.ID_Deporte = objetoCL.getID_Deporte();
         this.nombre = objetoCL.getNombre();
         this.descripcion = objetoCL.getDescripcion();
-        this.list_Eventos = new ArrayList();
-        this.list_Entrenadores = new ArrayList();
-        this.list_Deportistas = new ArrayList();
+        this.list_Eventos = new ArrayList<EventoDTO>();
+        this.list_Entrenadores = new ArrayList<EntrenadorDTO>();
+        this.list_Deportistas = new ArrayList<DeportistaDTO>();
     }
 
     public int getID_Deporte() {

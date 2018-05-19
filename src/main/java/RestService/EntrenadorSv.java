@@ -59,6 +59,9 @@ public class EntrenadorSv {
         objetoFH = new EntrenadorFachada();
         Entrenador objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new EntrenadorDTO(objetoCLS);
+        dto.list_Asistencias(objetoCLS.getList_Asistencias());
+        dto.list_Deportistas(objetoCLS.getList_Deportistas());
+        dto.list_Rutinas(objetoCLS.getList_Rutinas());
         return dto;
     }
 //    

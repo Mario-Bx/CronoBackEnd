@@ -55,10 +55,10 @@ public class DeportistaDTO {
         this.Contraseña = objCL.getContraseña();
         this.deporteFK = new DeportesDTO(objCL.getDeporteFK());
         this.entrenadorFK = new EntrenadorDTO(objCL.getEntrenadorFK());
-        this.list_Tiempo_Competencias = new ArrayList();
-        this.list_Chequeos = new ArrayList();
-        this.list_Asistencias = new ArrayList();
-        this.list_Tiempo_Entrenamientos = new ArrayList();
+        this.list_Tiempo_Competencias = new ArrayList<TiempoCompDTO>();
+        this.list_Chequeos = new ArrayList<ChequeoDTO>();
+        this.list_Asistencias = new ArrayList<AsistenciaDTO>();
+        this.list_Tiempo_Entrenamientos = new ArrayList<TiempoEntrenoDTO>();
     }
 
     public int getID_Deportista() {

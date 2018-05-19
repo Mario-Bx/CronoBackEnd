@@ -30,9 +30,9 @@ public class Entrenador implements Serializable {
     private String Contraseña;
 
     public Entrenador() {
-        this.list_Asistencias = new ArrayList();
-        this.list_Deportistas = new ArrayList();
-        this.list_Rutinas = new ArrayList();
+        this.list_Asistencias = new ArrayList<Asistencia>();
+        this.list_Deportistas = new ArrayList<Deportista>();
+        this.list_Rutinas = new ArrayList<Rutina>();
     }
 
     public Entrenador(String nombre, String apellido, String fechaNacimiento, int cedula, String ciudad, String Contraseña) {
@@ -42,9 +42,9 @@ public class Entrenador implements Serializable {
         this.cedula = cedula;
         this.ciudad = ciudad;
         this.Contraseña = Contraseña;
-        this.list_Asistencias = new ArrayList();
-        this.list_Deportistas = new ArrayList();
-        this.list_Rutinas = new ArrayList();
+        this.list_Asistencias = new ArrayList<Asistencia>();
+        this.list_Deportistas = new ArrayList<Deportista>();
+        this.list_Rutinas = new ArrayList<Rutina>();
     }
 
     public int getID_Entrenador() {

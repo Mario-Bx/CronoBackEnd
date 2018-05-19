@@ -31,10 +31,10 @@ public class Deportista implements Serializable {
     private String Contraseña;
 
     public Deportista() {
-        this.list_Tiempo_Competencias = new ArrayList();
-        this.list_Chequeos = new ArrayList();
-        this.list_Asistencias = new ArrayList();
-        this.list_Tiempo_Entrenamientos = new ArrayList();
+        this.list_Tiempo_Competencias = new ArrayList<Tiempo_Competencia>();
+        this.list_Chequeos = new ArrayList<Chequeo>();
+        this.list_Asistencias = new ArrayList<Asistencia>();
+        this.list_Tiempo_Entrenamientos = new ArrayList<TiempoEntreno>();
     }
 
     public Deportista(String nombre, String apellido, String fechaNacimiento, int cedula, String ciudad, String categoria, String Contraseña) {
@@ -45,10 +45,10 @@ public class Deportista implements Serializable {
         this.ciudad = ciudad;
         this.categoria = categoria;
         this.Contraseña = Contraseña;
-        this.list_Tiempo_Competencias = new ArrayList();
-        this.list_Chequeos = new ArrayList();
-        this.list_Asistencias = new ArrayList();
-        this.list_Tiempo_Entrenamientos = new ArrayList();
+        this.list_Tiempo_Competencias = new ArrayList<Tiempo_Competencia>();
+        this.list_Chequeos = new ArrayList<Chequeo>();
+        this.list_Asistencias = new ArrayList<Asistencia>();
+        this.list_Tiempo_Entrenamientos = new ArrayList<TiempoEntreno>();
     }
 
     public int getID_Deportista() {

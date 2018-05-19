@@ -57,6 +57,7 @@ public class RutinaSv {
         objetoFH = new RutinaFachada();
         Rutina objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new RutinaDTO(objetoCLS);
+        dto.list_TimeEnt(objetoCLS.getList_TimeEnt());
         return dto;
     }
 //    

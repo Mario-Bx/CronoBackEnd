@@ -26,17 +26,17 @@ public class Deportes implements Serializable {
     private String descripcion;
 
     public Deportes() {
-        this.list_Eventos = new ArrayList();
-        this.list_Entrenadores = new ArrayList();
-        this.list_Deportistas = new ArrayList();
+        this.list_Eventos = new ArrayList<EventoClas>();
+        this.list_Entrenadores = new ArrayList<Entrenador>();
+        this.list_Deportistas = new ArrayList<Deportista>();
     }
 
     public Deportes(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.list_Eventos = new ArrayList();
-        this.list_Entrenadores = new ArrayList();
-        this.list_Deportistas = new ArrayList();
+        this.list_Eventos = new ArrayList<EventoClas>();
+        this.list_Entrenadores = new ArrayList<Entrenador>();
+        this.list_Deportistas = new ArrayList<Deportista>();
     }
 
     public int getID_Deporte() {

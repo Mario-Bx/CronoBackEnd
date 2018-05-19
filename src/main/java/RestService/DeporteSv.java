@@ -58,6 +58,9 @@ public class DeporteSv {
         objetoFH = new DeportesFachada();
         Deportes objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new DeportesDTO(objetoCLS);
+        dto.List_Eventos(objetoCLS.getList_Eventos());
+        dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
+        dto.list_Deportistas(objetoCLS.getList_Deportistas());
         return dto;
     }
 

@@ -63,6 +63,10 @@ public class DeportistaSv {
         objetoFH = new DeportistaFachada();
         Deportista objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new DeportistaDTO(objetoCLS);
+        dto.list_Asistencias(objetoCLS.getList_Asistencias());
+        dto.list_Chequeos(objetoCLS.getList_Chequeos());
+        dto.list_Tiempo_Competencias(objetoCLS.getList_Tiempo_Competencias());
+        dto.list_Tiempo_Entrenamientos(objetoCLS.getList_Tiempo_Entrenamientos());
         return dto;
     }
 //    

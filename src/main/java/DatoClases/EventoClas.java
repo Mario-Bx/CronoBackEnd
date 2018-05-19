@@ -28,7 +28,7 @@ public class EventoClas implements Serializable {
     private String lugar;
 
     public EventoClas() {
-        this.list_Tiempo_Competencias = new ArrayList();
+        this.list_Tiempo_Competencias = new ArrayList<Tiempo_Competencia>();
     }
 
     public EventoClas(String nombre, String Tipo, String fecha, String lugar) {
@@ -36,7 +36,7 @@ public class EventoClas implements Serializable {
         this.Tipo = Tipo;
         this.fecha = fecha;
         this.lugar = lugar;
-        this.list_Tiempo_Competencias = new ArrayList();
+        this.list_Tiempo_Competencias = new ArrayList<Tiempo_Competencia>();
     }
 
     public int getID_Evento() {

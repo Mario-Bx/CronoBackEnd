@@ -35,7 +35,6 @@ public class MainGlassfish {
         System.out.println("------output of set log level: " + result.getOutput());
         Deployer deployer = glassfish.getDeployer();
 
-        //Invocando el Script de Creacion de la base de datos.
         // Create a scattered web application.
         ScatteredArchive archive = new ScatteredArchive("indexRest",
                 ScatteredArchive.Type.WAR, new File(webappDirLocation));

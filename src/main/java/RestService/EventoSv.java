@@ -59,6 +59,7 @@ public class EventoSv {
         objetoFH = new EventoClasFachada();
         EventoClas objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new EventoDTO(objetoCLS);
+        dto.list_Tiempo_Competencias(objetoCLS.getList_Tiempo_Competencias());
         return dto;
     }
 //    
