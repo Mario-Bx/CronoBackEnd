@@ -59,7 +59,7 @@ public class SingletonConnection {
             properties.put("javax.persistence.jdbc.password", password );
             properties.put("javax.persistence.jdbc.driver", "org.postgresql.Driver");
             properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-            emf = Persistence.createEntityManagerFactory("jpa",properties);
+            emf = Persistence.createEntityManagerFactory("CronoJpa",properties);
             em = emf.createEntityManager();
         } catch (URISyntaxException ex) {
             Logger.getLogger(SingletonConnection.class.getName()).log(Level.SEVERE, null, ex);
