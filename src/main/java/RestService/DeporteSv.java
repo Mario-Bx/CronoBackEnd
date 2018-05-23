@@ -34,16 +34,16 @@ public class DeporteSv {
 
     ///////OBTENER TODOS LOS DEPORTES
     @GET
-    @Produces({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public List<DeportesDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
         objetoFH = new DeportesFachada();
         List<Deportes> objetoCl = objetoFH.buscarTodoObj();
         List<DeportesDTO> objetoDTO = new ArrayList<DeportesDTO>();
         for (Deportes objetoCLS : objetoCl) {
             dto = new DeportesDTO(objetoCLS);
-//            dto.List_Eventos(objetoCLS.getList_Eventos());
-//            dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
-//            dto.list_Deportistas(objetoCLS.getList_Deportistas());
+            dto.List_Eventos(objetoCLS.getList_Eventos());
+            dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
+            dto.list_Deportistas(objetoCLS.getList_Deportistas());
             objetoDTO.add(dto);
         }
         return objetoDTO;
@@ -57,10 +57,10 @@ public class DeporteSv {
     public DeportesDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
         objetoFH = new DeportesFachada();
         Deportes objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
-//        dto = new DeportesDTO(objetoCLS);
-//        dto.List_Eventos(objetoCLS.getList_Eventos());
-//        dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
-//        dto.list_Deportistas(objetoCLS.getList_Deportistas());
+        dto = new DeportesDTO(objetoCLS);
+        dto.List_Eventos(objetoCLS.getList_Eventos());
+        dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
+        dto.list_Deportistas(objetoCLS.getList_Deportistas());
         return dto;
     }
 
