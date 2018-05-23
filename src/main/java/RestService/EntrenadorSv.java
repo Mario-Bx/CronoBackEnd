@@ -80,7 +80,7 @@ public class EntrenadorSv {
         objetoCLS.setFechaNacimiento(objetoDto.getFechaNacimiento());
         objetoCLS.setCedula(objetoDto.getCedula());
         objetoCLS.setCiudad(objetoDto.getCiudad());
-        objetoCLS.setContraseña(objetoDto.getContraseña());
+//        objetoCLS.setContraseña(objetoDto.getContraseña());
 
         objetoFH2 = new DeportesFachada();
         Deportes objetoCLS2 = objetoFH2.busacarObj(objetoDto.getDeporteFK().getID_Deporte());
@@ -105,7 +105,7 @@ public class EntrenadorSv {
         objetoCLS.setFechaNacimiento(objetoDto.getFechaNacimiento());
         objetoCLS.setCedula(objetoDto.getCedula());
         objetoCLS.setCiudad(objetoDto.getCiudad());
-        objetoCLS.setContraseña(objetoDto.getContraseña());
+//        objetoCLS.setContraseña(objetoDto.getContraseña());
 
         objetoFH2 = new DeportesFachada();
         Deportes objetoCLS2 = objetoFH2.busacarObj(objetoDto.getDeporteFK().getID_Deporte());
