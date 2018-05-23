@@ -63,8 +63,6 @@ public class SingletonConnection {
             em = emf.createEntityManager();
         } catch (URISyntaxException ex) {
             Logger.getLogger(SingletonConnection.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-       
+        }       
     }
 }

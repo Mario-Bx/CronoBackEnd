@@ -24,7 +24,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class RutinaDTO {
 
     private int ID_Rutina;
-
     private int repeticiones;
     private int distancia;
     private String estilo;
