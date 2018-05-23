@@ -33,7 +33,7 @@ public class DeportistaDTO {
     private int cedula;
     private String ciudad;
     private String categoria;
-    private String Contraseña;
+    private String password;
     private DeportesDTO deporteFK;
     private EntrenadorDTO entrenadorFK;
     private List<TiempoCompDTO> list_Tiempo_Competencias;
@@ -52,7 +52,7 @@ public class DeportistaDTO {
         this.cedula = objCL.getCedula();
         this.ciudad = objCL.getCiudad();
         this.categoria = objCL.getCategoria();
-        this.Contraseña = objCL.getContraseña();
+        this.password = objCL.getPassword();
         this.deporteFK = new DeportesDTO(objCL.getDeporteFK());
         this.entrenadorFK = new EntrenadorDTO(objCL.getEntrenadorFK());
         this.list_Tiempo_Competencias = new ArrayList<TiempoCompDTO>();
@@ -117,12 +117,12 @@ public class DeportistaDTO {
         this.categoria = categoria;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public DeportesDTO getDeporteFK() {

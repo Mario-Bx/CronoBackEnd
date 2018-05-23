@@ -27,7 +27,7 @@ public class Entrenador implements Serializable {
     private String fechaNacimiento;
     private int cedula;
     private String ciudad;
-//    private String Contraseña;
+    private String password;
 
     public Entrenador() {
         this.list_Asistencias = new ArrayList<Asistencia>();
@@ -35,13 +35,13 @@ public class Entrenador implements Serializable {
         this.list_Rutinas = new ArrayList<Rutina>();
     }
 
-    public Entrenador(String nombre, String apellido, String fechaNacimiento, int cedula, String ciudad, String Contraseña) {
+    public Entrenador(String nombre, String apellido, String fechaNacimiento, int cedula, String ciudad, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.cedula = cedula;
         this.ciudad = ciudad;
-//        this.Contraseña = Contraseña;
+        this.password = password;
         this.list_Asistencias = new ArrayList<Asistencia>();
         this.list_Deportistas = new ArrayList<Deportista>();
         this.list_Rutinas = new ArrayList<Rutina>();
@@ -95,17 +95,17 @@ public class Entrenador implements Serializable {
         this.ciudad = ciudad;
     }
 
-//    public String getContraseña() {
-//        return Contraseña;
-//    }
-//
-//    public void setContraseña(String Contraseña) {
-//        this.Contraseña = Contraseña;
-//    }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public String toString() {
-        return "Entrenador{" + "ID_Entrenador=" + ID_Entrenador + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", cedula=" + cedula + ", ciudad=" + ciudad + ", deporteFK=" + deporteFK + '}';
+        return "Entrenador{" + "ID_Entrenador=" + ID_Entrenador + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", cedula=" + cedula + ", ciudad=" + ciudad + ", Contrase\u00f1a=" + password + ", deporteFK=" + deporteFK + '}';
     }
     //Realacoin de 0-1----1 entrew (Evento-Entrenador)
     @ManyToOne

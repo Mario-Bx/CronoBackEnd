@@ -86,7 +86,7 @@ public class DeportistaSv {
         objetoCLS.setCedula(objetoDto.getCedula());
         objetoCLS.setCiudad(objetoDto.getCiudad());
         objetoCLS.setCategoria(objetoDto.getCategoria());
-        objetoCLS.setContraseña(objetoDto.getContraseña());
+        objetoCLS.setPassword(objetoDto.getPassword());
 
         objetoFH2 = new DeportesFachada();
         Deportes objetoCLS2 = objetoFH2.busacarObj(objetoDto.getDeporteFK().getID_Deporte());
@@ -116,7 +116,7 @@ public class DeportistaSv {
         objetoCLS.setCedula(objetoDto.getCedula());
         objetoCLS.setCiudad(objetoDto.getCiudad());
         objetoCLS.setCategoria(objetoDto.getCategoria());
-        objetoCLS.setContraseña(objetoDto.getContraseña());
+        objetoCLS.setPassword(objetoDto.getPassword());
 
         objetoFH2 = new DeportesFachada();
         Deportes objetoCLS2 = objetoFH2.busacarObj(objetoDto.getDeporteFK().getID_Deporte());

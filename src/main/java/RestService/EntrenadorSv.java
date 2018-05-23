@@ -43,7 +43,7 @@ public class EntrenadorSv {
         for (Entrenador objetoCLS : objetoCl) {
             dto = new EntrenadorDTO(objetoCLS);
             dto.list_Asistencias(objetoCLS.getList_Asistencias());
-//            dto.list_Deportistas(objetoCLS.getList_Deportistas());
+            dto.list_Deportistas(objetoCLS.getList_Deportistas());
             dto.list_Rutinas(objetoCLS.getList_Rutinas());
             objetoDTO.add(dto);
         }
@@ -80,7 +80,7 @@ public class EntrenadorSv {
         objetoCLS.setFechaNacimiento(objetoDto.getFechaNacimiento());
         objetoCLS.setCedula(objetoDto.getCedula());
         objetoCLS.setCiudad(objetoDto.getCiudad());
-//        objetoCLS.setContraseña(objetoDto.getContraseña());
+        objetoCLS.setPassword(objetoDto.getPassword());
 
         objetoFH2 = new DeportesFachada();
         Deportes objetoCLS2 = objetoFH2.busacarObj(objetoDto.getDeporteFK().getID_Deporte());
@@ -105,7 +105,7 @@ public class EntrenadorSv {
         objetoCLS.setFechaNacimiento(objetoDto.getFechaNacimiento());
         objetoCLS.setCedula(objetoDto.getCedula());
         objetoCLS.setCiudad(objetoDto.getCiudad());
-//        objetoCLS.setContraseña(objetoDto.getContraseña());
+        objetoCLS.setPassword(objetoDto.getPassword());
 
         objetoFH2 = new DeportesFachada();
         Deportes objetoCLS2 = objetoFH2.busacarObj(objetoDto.getDeporteFK().getID_Deporte());

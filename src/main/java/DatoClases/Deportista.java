@@ -28,7 +28,7 @@ public class Deportista implements Serializable {
     private int cedula;
     private String ciudad;
     private String categoria;
-    private String Contraseña;
+    private String password;
 
     public Deportista() {
         this.list_Tiempo_Competencias = new ArrayList<Tiempo_Competencia>();
@@ -37,14 +37,14 @@ public class Deportista implements Serializable {
         this.list_Tiempo_Entrenamientos = new ArrayList<TiempoEntreno>();
     }
 
-    public Deportista(String nombre, String apellido, String fechaNacimiento, int cedula, String ciudad, String categoria, String Contraseña) {
+    public Deportista(String nombre, String apellido, String fechaNacimiento, int cedula, String ciudad, String categoria, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.cedula = cedula;
         this.ciudad = ciudad;
         this.categoria = categoria;
-        this.Contraseña = Contraseña;
+        this.password = password;
         this.list_Tiempo_Competencias = new ArrayList<Tiempo_Competencia>();
         this.list_Chequeos = new ArrayList<Chequeo>();
         this.list_Asistencias = new ArrayList<Asistencia>();
@@ -107,17 +107,17 @@ public class Deportista implements Serializable {
         this.categoria = categoria;
     }
 
-    public String getContraseña() {
-        return Contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
-        return "Deportista{" + "ID_Deportista=" + ID_Deportista + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", cedula=" + cedula + ", ciudad=" + ciudad + ", categoria=" + categoria + ", Contrase\u00f1a=" + Contraseña + ", deporteFK=" + deporteFK + ", entrenadorFK=" + entrenadorFK + '}';
+        return "Deportista{" + "ID_Deportista=" + ID_Deportista + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", cedula=" + cedula + ", ciudad=" + ciudad + ", categoria=" + categoria + ", Contrase\u00f1a=" + password + ", deporteFK=" + deporteFK + ", entrenadorFK=" + entrenadorFK + '}';
     }
     //Realacoin de 0-1----1 entrew (Evento-Deportista)
     @ManyToOne
