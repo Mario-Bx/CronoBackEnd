@@ -42,9 +42,9 @@ public class EntrenadorSv {
         List<EntrenadorDTO> objetoDTO = new ArrayList<EntrenadorDTO>();
         for (Entrenador objetoCLS : objetoCl) {
             dto = new EntrenadorDTO(objetoCLS);
-//            dto.list_Asistencias(objetoCLS.getList_Asistencias());
+            dto.list_Asistencias(objetoCLS.getList_Asistencias());
 //            dto.list_Deportistas(objetoCLS.getList_Deportistas());
-//            dto.list_Rutinas(objetoCLS.getList_Rutinas());
+            dto.list_Rutinas(objetoCLS.getList_Rutinas());
             objetoDTO.add(dto);
         }
         return objetoDTO;
