@@ -42,8 +42,8 @@ public class DeporteSv {
         for (Deportes objetoCLS : objetoCl) {
             dto = new DeportesDTO(objetoCLS);
             dto.List_Eventos(objetoCLS.getList_Eventos());
-//            dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
-//            dto.list_Deportistas(objetoCLS.getList_Deportistas());
+            dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
+            dto.list_Deportistas(objetoCLS.getList_Deportistas());
             objetoDTO.add(dto);
         }
         return objetoDTO;
