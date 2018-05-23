@@ -61,7 +61,7 @@ public class DeporteSv {
         dto.List_Eventos(objetoCLS.getList_Eventos());
         dto.list_Entrenadores(objetoCLS.getList_Entrenadores());
         dto.list_Deportistas(objetoCLS.getList_Deportistas());
-        return dto;
+            return dto;
     }
 
     /////INSERTAR UN NUEVO DEPORTE
