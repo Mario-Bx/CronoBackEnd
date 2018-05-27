@@ -38,7 +38,7 @@ public class ChequeoSv {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<ChequeoDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
+    public List<ChequeoDTO> getListaDto_JSON() throws ConexionException {
         objetoFH = new ChequeoFachada();
         List<Chequeo> objetoCl = objetoFH.buscarTodoObj();
         List<ChequeoDTO> objetoDTO = new ArrayList<ChequeoDTO>();
@@ -54,7 +54,7 @@ public class ChequeoSv {
     @GET
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public ChequeoDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public ChequeoDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new ChequeoFachada();
         Chequeo objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new ChequeoDTO(objetoCLS);
@@ -66,7 +66,7 @@ public class ChequeoSv {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public ChequeoDTO addObjeto(ChequeoDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public ChequeoDTO addObjeto(ChequeoDTO objetoDto) throws ConexionException {
 
         objetoFH = new ChequeoFachada();
         Chequeo objetoCLS = new Chequeo();
@@ -88,11 +88,11 @@ public class ChequeoSv {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public ChequeoDTO actualizarObjeto(ChequeoDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public ChequeoDTO actualizarObjeto(ChequeoDTO objetoDto) throws ConexionException {
 
         objetoFH = new ChequeoFachada();
         Chequeo objetoCLS = new Chequeo();
-
+        objetoCLS.setID_Chequeo(objetoDto.getID_Chequeo());
         objetoCLS.setPrueba(objetoDto.getPrueba());
         objetoCLS.setDistancia(objetoDto.getDistancia());
         objetoCLS.setTiempo(objetoDto.getTiempo());
@@ -110,7 +110,7 @@ public class ChequeoSv {
     @DELETE
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void deleteStudent(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public void deleteStudent(@PathParam("ID") String id) throws ConexionException {
 
         objetoFH = new ChequeoFachada();
         Chequeo objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));

@@ -36,13 +36,12 @@ public class RutinaSv {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<RutinaDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
+    public List<RutinaDTO> getListaDto_JSON() throws ConexionException {
         objetoFH = new RutinaFachada();
         List<Rutina> objetoCl = objetoFH.buscarTodoObj();
         List<RutinaDTO> objetoDTO = new ArrayList<RutinaDTO>();
         for (Rutina objetoCLS : objetoCl) {
             dto = new RutinaDTO(objetoCLS);
-            dto.list_TimeEnt(objetoCLS.getList_TimeEnt());
             objetoDTO.add(dto);
         }
         return objetoDTO;
@@ -53,7 +52,7 @@ public class RutinaSv {
     @GET
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public RutinaDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public RutinaDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new RutinaFachada();
         Rutina objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new RutinaDTO(objetoCLS);
@@ -66,7 +65,7 @@ public class RutinaSv {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public RutinaDTO addObjeto(RutinaDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public RutinaDTO addObjeto(RutinaDTO objetoDto) throws ConexionException {
 
         objetoFH = new RutinaFachada();
         Rutina objetoCLS = new Rutina();
@@ -90,11 +89,11 @@ public class RutinaSv {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public RutinaDTO actualizarObjeto(RutinaDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public RutinaDTO actualizarObjeto(RutinaDTO objetoDto) throws ConexionException {
 
         objetoFH = new RutinaFachada();
         Rutina objetoCLS = new Rutina();
-
+        objetoCLS.setID_Rutina(objetoDto.getID_Rutina());
         objetoCLS.setRepeticiones(objetoDto.getRepeticiones());
         objetoCLS.setDistancia(objetoDto.getDistancia());
         objetoCLS.setEstilo(objetoDto.getEstilo());
@@ -114,7 +113,7 @@ public class RutinaSv {
     @DELETE
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void deleteStudent(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public void deleteStudent(@PathParam("ID") String id) throws ConexionException {
 
         objetoFH = new RutinaFachada();
         Rutina objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));

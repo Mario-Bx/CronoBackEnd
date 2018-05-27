@@ -38,13 +38,12 @@ public class EventoSv {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<EventoDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
+    public List<EventoDTO> getListaDto_JSON() throws ConexionException{
         objetoFH = new EventoClasFachada();
         List<EventoClas> objetoCl = objetoFH.buscarTodoObj();
         List<EventoDTO> objetoDTO = new ArrayList<EventoDTO>();
         for (EventoClas objetoCLS : objetoCl) {
             dto = new EventoDTO(objetoCLS);
-            dto.list_Tiempo_Competencias(objetoCLS.getList_Tiempo_Competencias());
             objetoDTO.add(dto);
         }
         return objetoDTO;
@@ -55,11 +54,11 @@ public class EventoSv {
     @GET
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public EventoDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public EventoDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new EventoClasFachada();
         EventoClas objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
-        dto = new EventoDTO(objetoCLS);
         dto.list_Tiempo_Competencias(objetoCLS.getList_Tiempo_Competencias());
+        dto = new EventoDTO(objetoCLS);
         return dto;
     }
 //    
@@ -68,7 +67,7 @@ public class EventoSv {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public EventoDTO addObjeto(EventoDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public EventoDTO addObjeto(EventoDTO objetoDto) throws ConexionException {
 
         objetoFH = new EventoClasFachada();
         EventoClas objetoCLS = new EventoClas();
@@ -91,11 +90,12 @@ public class EventoSv {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public EventoDTO actualizarObjeto(EventoDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public EventoDTO actualizarObjeto(EventoDTO objetoDto) throws ConexionException {
 
         objetoFH = new EventoClasFachada();
         EventoClas objetoCLS = new EventoClas();
-
+        objetoCLS.setID_Evento(objetoDto.getID_Evento());
+        objetoCLS.setID_Evento(objetoDto.getID_Evento());
         objetoCLS.setNombre(objetoDto.getNombre());
         objetoCLS.setTipo(objetoDto.getTipo());
         objetoCLS.setFecha(objetoDto.getFecha());
@@ -114,7 +114,7 @@ public class EventoSv {
     @DELETE
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void deleteStudent(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public void deleteStudent(@PathParam("ID") String id) throws ConexionException {
 
         objetoFH = new EventoClasFachada();
         EventoClas objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));

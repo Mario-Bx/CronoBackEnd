@@ -5,6 +5,7 @@
  */
 package Fachadas;
 
+import DaoGenerico.ConexionException;
 import DaoGenerico.ServiceImpl;
 import DaoGenerico.SingletonConnection;
 import DatoClases.Deportes;

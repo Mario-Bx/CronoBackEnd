@@ -37,29 +37,25 @@ public class DeportistaSv {
     EntrenadorFachada objetoFH3 = null;
     DeportistaDTO dto = null;
 
+    ////Buscar Todo
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<DeportistaDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
+    public List<DeportistaDTO> getListaDto_JSON() throws ConexionException {
         objetoFH = new DeportistaFachada();
         List<Deportista> objetoCl = objetoFH.buscarTodoObj();
         List<DeportistaDTO> objetoDTO = new ArrayList<DeportistaDTO>();
         for (Deportista objetoCLS : objetoCl) {
             dto = new DeportistaDTO(objetoCLS);
-            dto.list_Asistencias(objetoCLS.getList_Asistencias());
-            dto.list_Chequeos(objetoCLS.getList_Chequeos());
-            dto.list_Tiempo_Competencias(objetoCLS.getList_Tiempo_Competencias());
-            dto.list_Tiempo_Entrenamientos(objetoCLS.getList_Tiempo_Entrenamientos());
             objetoDTO.add(dto);
         }
         return objetoDTO;
     }
 
-    /////
-    /////
+    ////BusCAr Por Id
     @GET
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public DeportistaDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public DeportistaDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new DeportistaFachada();
         Deportista objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new DeportistaDTO(objetoCLS);
@@ -69,13 +65,12 @@ public class DeportistaSv {
         dto.list_Tiempo_Entrenamientos(objetoCLS.getList_Tiempo_Entrenamientos());
         return dto;
     }
-//    
-//    
 
+    /////Crear Objeto
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public DeportistaDTO addObjeto(DeportistaDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public DeportistaDTO addObjeto(DeportistaDTO objetoDto) throws ConexionException {
 
         objetoFH = new DeportistaFachada();
         Deportista objetoCLS = new Deportista();
@@ -100,16 +95,15 @@ public class DeportistaSv {
         return dto;
     }
 
-    /////
-    /////
+    ////Actualizar Objeto
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public DeportistaDTO actualizarObjeto(DeportistaDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public DeportistaDTO actualizarObjeto(DeportistaDTO objetoDto) throws ConexionException {
 
         objetoFH = new DeportistaFachada();
         Deportista objetoCLS = new Deportista();
-
+        objetoCLS.setID_Deportista(objetoDto.getID_Deportista());
         objetoCLS.setNombre(objetoDto.getNombre());
         objetoCLS.setApellido(objetoDto.getApellido());
         objetoCLS.setFechaNacimiento(objetoDto.getFechaNacimiento());
@@ -130,12 +124,11 @@ public class DeportistaSv {
         return dto;
     }
 
-    /////
-    /////
+    ///////Eliminar Objeto
     @DELETE
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void deleteStudent(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public void deleteStudent(@PathParam("ID") String id) throws ConexionException {
 
         objetoFH = new DeportistaFachada();
         Deportista objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));

@@ -6,7 +6,7 @@
 package PruebaEjecucion;
 
 import DatoClases.Deportes;
-import Fachadas.ConexionException;
+import DaoGenerico.ConexionException;
 import Fachadas.DeportesFachada;
 import java.util.ArrayList;
 import java.util.List;

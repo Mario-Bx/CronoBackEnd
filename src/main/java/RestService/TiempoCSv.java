@@ -39,7 +39,7 @@ public class TiempoCSv {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<TiempoCompDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
+    public List<TiempoCompDTO> getListaDto_JSON() throws ConexionException {
         objetoFH = new TiempooCompFachada();
         List<Tiempo_Competencia> objetoCl = objetoFH.buscarTodoObj();
         List<TiempoCompDTO> objetoDTO = new ArrayList<TiempoCompDTO>();
@@ -55,7 +55,7 @@ public class TiempoCSv {
     @GET
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public TiempoCompDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public TiempoCompDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new TiempooCompFachada();
         Tiempo_Competencia objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new TiempoCompDTO(objetoCLS);
@@ -67,7 +67,7 @@ public class TiempoCSv {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public TiempoCompDTO addObjeto(TiempoCompDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public TiempoCompDTO addObjeto(TiempoCompDTO objetoDto) throws ConexionException {
 
         objetoFH = new TiempooCompFachada();
         Tiempo_Competencia objetoCLS = new Tiempo_Competencia();
@@ -94,11 +94,11 @@ public class TiempoCSv {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public TiempoCompDTO actualizarObjeto(TiempoCompDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public TiempoCompDTO actualizarObjeto(TiempoCompDTO objetoDto) throws ConexionException {
 
         objetoFH = new TiempooCompFachada();
         Tiempo_Competencia objetoCLS = new Tiempo_Competencia();
-
+        objetoCLS.setID_tiempos(objetoDto.getID_tiempos());
         objetoCLS.setPrueba(objetoDto.getPrueba());
         objetoCLS.setDistancia(objetoDto.getDistancia());
         objetoCLS.setTiempo(objetoDto.getTiempo());
@@ -121,7 +121,7 @@ public class TiempoCSv {
     @DELETE
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void deleteStudent(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public void deleteStudent(@PathParam("ID") String id) throws ConexionException {
 
         objetoFH = new TiempooCompFachada();
         Tiempo_Competencia objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));

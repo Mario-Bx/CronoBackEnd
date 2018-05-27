@@ -36,15 +36,12 @@ public class EntrenadorSv {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<EntrenadorDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
+    public List<EntrenadorDTO> getListaDto_JSON() throws ConexionException {
         objetoFH = new EntrenadorFachada();
         List<Entrenador> objetoCl = objetoFH.buscarTodoObj();
         List<EntrenadorDTO> objetoDTO = new ArrayList<EntrenadorDTO>();
         for (Entrenador objetoCLS : objetoCl) {
             dto = new EntrenadorDTO(objetoCLS);
-            dto.list_Asistencias(objetoCLS.getList_Asistencias());
-            dto.list_Deportistas(objetoCLS.getList_Deportistas());
-            dto.list_Rutinas(objetoCLS.getList_Rutinas());
             objetoDTO.add(dto);
         }
         return objetoDTO;
@@ -55,7 +52,7 @@ public class EntrenadorSv {
     @GET
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public EntrenadorDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public EntrenadorDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new EntrenadorFachada();
         Entrenador objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new EntrenadorDTO(objetoCLS);
@@ -70,7 +67,7 @@ public class EntrenadorSv {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public EntrenadorDTO addObjeto(EntrenadorDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public EntrenadorDTO addObjeto(EntrenadorDTO objetoDto) throws ConexionException {
 
         objetoFH = new EntrenadorFachada();
         Entrenador objetoCLS = new Entrenador();
@@ -95,11 +92,11 @@ public class EntrenadorSv {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public EntrenadorDTO actualizarObjeto(EntrenadorDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public EntrenadorDTO actualizarObjeto(EntrenadorDTO objetoDto) throws ConexionException {
 
         objetoFH = new EntrenadorFachada();
         Entrenador objetoCLS = new Entrenador();
-
+        objetoCLS.setID_Entrenador(objetoDto.getID_Entrenador());
         objetoCLS.setNombre(objetoDto.getNombre());
         objetoCLS.setApellido(objetoDto.getApellido());
         objetoCLS.setFechaNacimiento(objetoDto.getFechaNacimiento());
@@ -120,7 +117,7 @@ public class EntrenadorSv {
     @DELETE
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void deleteStudent(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public void deleteStudent(@PathParam("ID") String id) throws ConexionException {
 
         objetoFH = new EntrenadorFachada();
         Entrenador objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));

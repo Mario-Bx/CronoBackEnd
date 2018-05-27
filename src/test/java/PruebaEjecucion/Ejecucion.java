@@ -7,7 +7,7 @@ package PruebaEjecucion;
  */
 
 
-import DaoGenerico.ServiceImpl;
+import DaoGenerico.ConexionException;
 import DatoClases.*;
 import Fachadas.*;
 import java.util.ArrayList;

@@ -40,7 +40,7 @@ public class AsistenciaSv {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public List<AsistenciaDTO> getListaDto_JSON() throws ConexionException, Fachadas.ConexionException {
+    public List<AsistenciaDTO> getListaDto_JSON() throws ConexionException {
         objetoFH = new AsistenciaFachada();
         List<Asistencia> objetoCl = objetoFH.buscarTodoObj();
         List<AsistenciaDTO> objetoDTO = new ArrayList<AsistenciaDTO>();
@@ -56,7 +56,7 @@ public class AsistenciaSv {
     @GET
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public AsistenciaDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public AsistenciaDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new AsistenciaFachada();
         Asistencia objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
         dto = new AsistenciaDTO(objetoCLS);
@@ -68,7 +68,7 @@ public class AsistenciaSv {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public AsistenciaDTO addObjeto(AsistenciaDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public AsistenciaDTO addObjeto(AsistenciaDTO objetoDto) throws ConexionException {
 
         objetoFH = new AsistenciaFachada();
         Asistencia objetoCLS = new Asistencia();
@@ -93,11 +93,11 @@ public class AsistenciaSv {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public AsistenciaDTO actualizarObjeto(AsistenciaDTO objetoDto) throws ConexionException, Fachadas.ConexionException {
+    public AsistenciaDTO actualizarObjeto(AsistenciaDTO objetoDto) throws ConexionException {
 
         objetoFH = new AsistenciaFachada();
         Asistencia objetoCLS = new Asistencia();
-
+        objetoCLS.setID_Asistencia(objetoDto.getID_Asistencia());
         objetoCLS.setFecha(objetoDto.getFecha());
         objetoCLS.setJornada(objetoDto.getJornada());
 
@@ -118,7 +118,7 @@ public class AsistenciaSv {
     @DELETE
     @Path("/{ID}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public void deleteStudent(@PathParam("ID") String id) throws ConexionException, Fachadas.ConexionException {
+    public void deleteStudent(@PathParam("ID") String id) throws ConexionException {
 
         objetoFH = new AsistenciaFachada();
         Asistencia objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
