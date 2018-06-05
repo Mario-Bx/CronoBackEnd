@@ -45,6 +45,22 @@ public class DeporteSv {
         }
         return objetoDTO;
     }
+    
+     ///////Numero de Deportistas
+    @GET
+    @Path("/Numero")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public List<DeportesDTO> getListaDtoN_JSON() throws ConexionException {
+        objetoFH = new DeportesFachada();
+        List<Deportes> objetoCl = objetoFH.buscarTodoObj();
+        List<DeportesDTO> objetoDTO = new ArrayList<DeportesDTO>();
+        for (Deportes objetoCLS : objetoCl) {
+            dto = new DeportesDTO(objetoCLS);
+            dto.setDescripcion ("Numero Deportistas: " + objetoCLS.getList_Deportistas().size());
+            objetoDTO.add(dto);
+        }
+        return objetoDTO;
+    }
 
     /////
     /////OBTENER UN DEPORTE ESPECIFICO
