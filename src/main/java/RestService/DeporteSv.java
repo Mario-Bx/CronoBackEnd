@@ -57,6 +57,9 @@ public class DeporteSv {
         for (Deportes objetoCLS : objetoCl) {
             dto = new DeportesDTO(objetoCLS);
             dto.setDescripcion ("Numero Deportistas: " + objetoCLS.getList_Deportistas().size());
+            System.out.println("############");
+            System.out.println(dto.getDescripcion());
+            System.out.println("############");
             objetoDTO.add(dto);
         }
         return objetoDTO;
