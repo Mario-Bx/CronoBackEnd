@@ -29,7 +29,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author MARIO
  */
-@Path("/TiempoCSv")
+@Path("/TiempoCompSv")
 public class TiempoCSv {
 
     TiempooCompFachada objetoFH = null;
