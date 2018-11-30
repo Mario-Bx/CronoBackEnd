@@ -57,8 +57,8 @@ public class EventoSv {
     public EventoDTO buscarObjeto(@PathParam("ID") String id) throws ConexionException {
         objetoFH = new EventoClasFachada();
         EventoClas objetoCLS = objetoFH.busacarObj(Integer.parseInt(id));
-        dto.list_Tiempo_Competencias(objetoCLS.getList_Tiempo_Competencias());
         dto = new EventoDTO(objetoCLS);
+        dto.list_Tiempo_Competencias(objetoCLS.getList_Tiempo_Competencias());
         return dto;
     }
 //    
